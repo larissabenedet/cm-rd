@@ -2,21 +2,55 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+    <title>Formulario Integrado 2.0</title>
+    <style>
+      body {
+        padding: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
   </head>
   <body>
-    <p>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, sunt
-      quibusdam. Veritatis quam quo provident, aut minima aliquam ipsam,
-      accusamus distinctio, illum similique officia vel minus! Labore, fuga
-      atque? Molestiae!
-    </p>
+    <h1>Form com campo hidden</h1>
+
+    <form action="#" method="get" name="simple-form">
+      <table>
+        <tr>
+          <td>Nome</td>
+          <td><input type="text" name="campo_nome" required /></td>
+        </tr>
+
+        <tr>
+          <td>E-mail</td>
+          <td><input type="email" name="email" required /></td>
+        </tr>
+
+        <tr>
+          <td>Large Field</td>
+          <td><textarea cols="30" rows="10" name="large_field"></textarea></td>
+        </tr>
+
+        <!-- Campo oculto com atributo required -->
+        <tr class="hidden">
+          <td>Campo Oculto</td>
+          <td><input type="text" name="campo_oculto" required /></td>
+        </tr>
+
+        <tr>
+          <td colspan="2" align="right">
+            <br />
+            <input type="submit" id="submitButton" value="Enviar dados" />
+          </td>
+        </tr>
+      </table>
+    </form>
     <script
       type="text/javascript"
       async
-      src="https://dk9suync0k2va.cloudfront.net/js/loader-scripts/fbd40c8a-faa6-486c-8864-49fe451cdba3-loader.js"
+      src="https://d335luupugsy2.cloudfront.net/js/loader-scripts/ef813e17-9cf9-4c14-8809-0c9fe8af936f-loader.js"
     ></script>
   </body>
 </html>
