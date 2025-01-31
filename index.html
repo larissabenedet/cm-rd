@@ -11,29 +11,82 @@
       .hidden {
         display: none;
       }
+      .step {
+        margin-bottom: 20px;
+      }
     </style>
   </head>
   <body>
     <h1>Form</h1>
 
     <form action="#" method="get" name="novo-form">
-      <table>
-        <tr>
-          <td>Nome</td>
-          <td><input type="text" name="campo_nome" required /></td>
-        </tr>
+      <!-- Step 1 -->
+      <div class="step" id="step1">
+        <table>
+          <tr>
+            <td>E-mail</td>
+            <td><input type="email" name="email" required /></td>
+          </tr>
+          <tr>
+            <td>Idade</td>
+            <td><input type="number" name="idade" required /></td>
+          </tr>
+        </table>
+        <button type="button" onclick="nextStep()">Próximo</button>
+      </div>
 
-        <tr>
-          <td>E-mail</td>
-          <td><input type="email" name="email" required /></td>
-        </tr>
+      <!-- Step 2 - Menor de idade -->
+      <div class="step hidden" id="step2-menor">
+        <table>
+          <tr>
+            <td>Nome do Responsável</td>
+            <td><input type="text" name="responsavel" required /></td>
+          </tr>
+        </table>
+        <button type="button" onclick="previousStep()">Anterior</button>
+        <button type="submit">Enviar</button>
+      </div>
 
-        <tr>
-          <td>Large Field</td>
-          <td><textarea cols="30" rows="10" name="large_field"></textarea></td>
-        </tr>
-      </table>
+      <!-- Step 2 - Maior de idade -->
+      <div class="step hidden" id="step2-maior">
+        <table>
+          <tr>
+            <td>Profissão</td>
+            <td><input type="text" name="profissao" required /></td>
+          </tr>
+        </table>
+        <button type="button" onclick="previousStep()">Anterior</button>
+        <button type="submit">Enviar</button>
+      </div>
     </form>
+
+    <script>
+      function nextStep() {
+        const idade = document.querySelector('input[name="idade"]').value;
+        const step1 = document.getElementById("step1");
+        const step2Menor = document.getElementById("step2-menor");
+        const step2Maior = document.getElementById("step2-maior");
+
+        step1.classList.add("hidden");
+
+        if (idade < 18) {
+          step2Menor.classList.remove("hidden");
+        } else {
+          step2Maior.classList.remove("hidden");
+        }
+      }
+
+      function previousStep() {
+        const step1 = document.getElementById("step1");
+        const step2Menor = document.getElementById("step2-menor");
+        const step2Maior = document.getElementById("step2-maior");
+
+        step2Menor.classList.add("hidden");
+        step2Maior.classList.add("hidden");
+        step1.classList.remove("hidden");
+      }
+    </script>
+
     <script
       type="text/javascript"
       async
