@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario Integrado 2.0</title>
+    <title>Form com código de monitoramento em staging</title>
     <style>
       body {
         padding: 50px;
@@ -17,7 +17,7 @@
     </style>
   </head>
   <body>
-    <h1>Form</h1>
+    <h1>Form com código de monitoramento em staging</h1>
 
     <form action="#" method="get" name="novo-form">
       <!-- Step 1 -->
@@ -35,7 +35,7 @@
             <td>Campo sensivel</td>
             <td>
               <input
-                type="string"
+                type="number"
                 name="cartao_credito"
                 data-sensitive="true"
                 required
@@ -72,11 +72,12 @@
             </td>
           </tr>
         </table>
-        <button type="button" onclick="nextStep()">Próximo</button>
+        <!-- <button type="button" onclick="nextStep()">Próximo</button> -->
+        <button type="submit">Enviar</button>
       </div>
 
       <!-- Step 2 - Menor de idade -->
-      <div class="step hidden" id="step2-menor">
+      <!-- <div class="step hidden" id="step2-menor">
         <table>
           <tr>
             <td>Nome do Responsável</td>
@@ -85,10 +86,10 @@
         </table>
         <button type="button" onclick="previousStep()">Anterior</button>
         <button type="submit">Enviar</button>
-      </div>
+      </div> -->
 
       <!-- Step 2 - Maior de idade -->
-      <div class="step hidden" id="step2-maior">
+      <!-- <div class="step hidden" id="step2-maior">
         <table>
           <tr>
             <td>Profissão</td>
@@ -97,10 +98,10 @@
         </table>
         <button type="button" onclick="previousStep()">Anterior</button>
         <button type="submit">Enviar</button>
-      </div>
+      </div> -->
     </form>
 
-    <script>
+    <!-- <script>
       function nextStep() {
         const idade = document.querySelector('input[name="idade"]').value;
         const step1 = document.getElementById("step1");
@@ -125,7 +126,7 @@
         step2Maior.classList.add("hidden");
         step1.classList.remove("hidden");
       }
-    </script>
+    </script> -->
 
     <script
       type="text/javascript"
