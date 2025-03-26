@@ -68,7 +68,7 @@
           </tr>
         </table>
         <!-- <button type="button" onclick="nextStep()">Próximo</button> -->
-        <button type="submit">Enviar</button>
+        <button type="submit" id="submitButton">Enviar</button>
       </div>
 
       <!-- Step 2 - Menor de idade -->
@@ -128,6 +128,19 @@
       async
       src="https://d2umgtt5tsqx05.cloudfront.net/js/loader-scripts/37c417d5-3210-423a-87b4-a7a486315d5c-loader.js"
     ></script>
+
+    <script type="text/javascript">
+      document
+        .getElementById("submitButton")
+        .addEventListener("click", function (e) {
+          onSubmit(e);
+        });
+
+      function onSubmit(e) {
+        e.preventDefault();
+        console.log("Formulário enviado!");
+      }
+    </script>
 
     <script type="text/javascript">
       // var meus_campos = { co-mkt
