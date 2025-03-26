@@ -19,12 +19,9 @@
   <body>
     <h1>Form</h1>
 
-    <form
-      method="get"
-      action="https://squarespace.com/example"
-    >
+    <form action="https://example.squarespace.com/form-handler" method="POST">
       <!-- Step 1 -->
-      <div class="step" id="step1">
+      <div class="step">
         <table>
           <tr>
             <td>E-mail</td>
@@ -37,11 +34,7 @@
           <tr>
             <td>Campo sensivel</td>
             <td>
-              <input
-                name="securitycode"
-                data-sensitive="true"
-                required
-              />
+              <input name="securitycode" data-sensitive="true" required />
             </td>
           </tr>
           <tr>
